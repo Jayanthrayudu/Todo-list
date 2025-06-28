@@ -21,8 +21,17 @@ jobs:
       - name: Deploy via SSH
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@18.119.126.98 << 'EOF'
-            cd AWS-
+            cd Todo-list
             git pull origin main
+
+            echo "PORT=${PORT}" > backend/.env
+            echo "MONGO_URI=${MONGO_URI}" >> backend/.env
+            
+
             sudo docker-compose down
             sudo docker-compose up --build -d
           EOF
+        env:
+          PORT: ${{ secrets.PORT }}
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+          
