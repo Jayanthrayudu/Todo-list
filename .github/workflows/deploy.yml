@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy via SSH
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@18.119.126.98 << EOF
+          ssh -o StrictHostKeyChecking=no ubuntu@3.16.69.20 << EOF
             cd Todo-list
             git pull origin main
 
