@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="app">
-      <h1>TODO LISTSS</h1>
+      <h1>TODO LIST</h1>
       <TodoList />
     </div>
   );
